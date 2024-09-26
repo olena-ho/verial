@@ -145,11 +145,31 @@ export const Header = () => {
         </HomeLink>
       </LeftSection>
       <Nav>
-        <NavLink to={`/${currentLanguage}/products`}>{t("products")}</NavLink>
-        <NavLink to={`/${currentLanguage}/services`}>{t("services")}</NavLink>
-        <NavLink to={`/${currentLanguage}/resources`}>{t("resources")}</NavLink>
-        <NavLink to={`/${currentLanguage}/about-verial`}>{t("aboutVerial")}</NavLink>
-        <NavLink to={`/${currentLanguage}/distribution`}>{t("distribution")}</NavLink>
+        <NavLink
+          to={`/${currentLanguage}/products`}
+        >
+          {t("products")}
+        </NavLink>
+        <NavLink
+          to={`/${currentLanguage}/services`}
+        >
+          {t("services")}
+        </NavLink>
+        <NavLink
+          to={`/${currentLanguage}/resources`}
+        >
+          {t("resources")}
+        </NavLink>
+        <NavLink
+          to={`/${currentLanguage}/about-verial`}
+        >
+          {t("aboutVerial")}
+        </NavLink>
+        <NavLink
+          to={`/${currentLanguage}/distribution`}
+        >
+          {t("distribution")}
+        </NavLink>
       </Nav>
       <RightSection>
         <LngSelection

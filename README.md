@@ -2,7 +2,7 @@ Verial new website frontend part only
 
 1) created the app with Vite
 2) installed styled components
-3) Set up createBrowserRouter, RouterProvider and appRoutes in main.jsx, added Outlet in the App.jsx
+3) Set up BrowserRouter and Routes, added Outlet for nesting in the App.jsx
 4) set up i18n, I18nextProvider in main.jsx and language switch in the Header
 
 done:
