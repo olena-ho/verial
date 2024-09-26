@@ -5,5 +5,11 @@
   "services": "Servicios",
   "resources": "Recursos",
   "aboutVerial": "Sobre Verial",
-  "distribution": "Distribución"
+  "distribution": "Distribución",
+  "footer.text": "Verial es una empresa tecnológica que proporciona soluciones para empresas del sector de la distribución. Nuestro objetivo es ayudarte a hacer crecer tu negocio proporcionándote las herramientas y el soporte que necesitas para tener éxito.",
+  "products.mainTitle": "Nuestros productos",
+  "services.mainTitle": "Nuestros servicios",
+  "resources.mainTitle": "Nuestros recursos",
+  "about.mainTitle": "Sobre Verial",
+  "distribution.mainTitle": "Distribución"
 }

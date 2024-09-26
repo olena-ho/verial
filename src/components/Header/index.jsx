@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo-whiteBG.png";
 import english_flag from "../../assets/flags/english-flag.png";
@@ -41,7 +40,7 @@ const Nav = styled.nav`
   gap: 2rem;
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   font-size: 1rem;
   color: #333;
 
@@ -112,14 +111,18 @@ const DemoButton = styled.button`
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const changeLanguage = (lng) => {
     if (i18n.language !== lng) {
-      console.log("Changing language via dropdown to:", lng); // Debug output
       i18n.changeLanguage(lng);
-      navigate(`/${lng}`);
+      const currentLng = pathname.split("/")[1];
+      const newPath = currentLng
+        ? pathname.replace(currentLng, lng)
+        : `/${lng}${pathname}`;
+      navigate(newPath);
       setShowDropdown(false);
     }
   };
@@ -137,16 +140,16 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <LeftSection>
-        <HomeLink to="/">
+        <HomeLink to={`/${currentLanguage}`}>
           <Logo src={logo} alt="Verial logo" />
         </HomeLink>
       </LeftSection>
       <Nav>
-        <NavLink href="#">{t("products")}</NavLink>
-        <NavLink href="#">{t("services")}</NavLink>
-        <NavLink href="#">{t("resources")}</NavLink>
-        <NavLink href="#">{t("aboutVerial")}</NavLink>
-        <NavLink href="#">{t("distribution")}</NavLink>
+        <NavLink to={`/${currentLanguage}/products`}>{t("products")}</NavLink>
+        <NavLink to={`/${currentLanguage}/services`}>{t("services")}</NavLink>
+        <NavLink to={`/${currentLanguage}/resources`}>{t("resources")}</NavLink>
+        <NavLink to={`/${currentLanguage}/about-verial`}>{t("aboutVerial")}</NavLink>
+        <NavLink to={`/${currentLanguage}/distribution`}>{t("distribution")}</NavLink>
       </Nav>
       <RightSection>
         <LngSelection
