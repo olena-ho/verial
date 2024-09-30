@@ -11,5 +11,10 @@
   "services.mainTitle": "Our services",
   "resources.mainTitle": "Our resources",
   "about.mainTitle": "About Verial",
-  "distribution.mainTitle": "Distribution"
+  "distribution.mainTitle": "Distribution",
+  "businessMgt.mainTitle": "Business management",
+  "hospitality.mainTitle": "Hospitality",
+  "bookStores.mainTitle": "Bookstores",
+  "accounting.mainTitle": "Accounting",
+  "cloud.mainTitle": "Cloud"
 }

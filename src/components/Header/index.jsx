@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 
+// import { NavDropdown } from "../NavDropdown";
 import logo from "../../assets/logo-whiteBG.png";
 import english_flag from "../../assets/flags/english-flag.png";
 import spanish_flag from "../../assets/flags/spanish-flag.png";
@@ -38,6 +39,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: 2rem;
+  position: relative;
 `;
 
 const NavLink = styled(Link)`
@@ -145,29 +147,13 @@ export const Header = () => {
         </HomeLink>
       </LeftSection>
       <Nav>
-        <NavLink
-          to={`/${currentLanguage}/products`}
-        >
-          {t("products")}
-        </NavLink>
-        <NavLink
-          to={`/${currentLanguage}/services`}
-        >
-          {t("services")}
-        </NavLink>
-        <NavLink
-          to={`/${currentLanguage}/resources`}
-        >
-          {t("resources")}
-        </NavLink>
-        <NavLink
-          to={`/${currentLanguage}/about-verial`}
-        >
+        <NavLink to={`/${currentLanguage}/products`}>{t("products")}</NavLink>
+        <NavLink to={`/${currentLanguage}/services`}>{t("services")}</NavLink>
+        <NavLink to={`/${currentLanguage}/resources`}>{t("resources")}</NavLink>
+        <NavLink to={`/${currentLanguage}/about-verial`}>
           {t("aboutVerial")}
         </NavLink>
-        <NavLink
-          to={`/${currentLanguage}/distribution`}
-        >
+        <NavLink to={`/${currentLanguage}/distribution`}>
           {t("distribution")}
         </NavLink>
       </Nav>

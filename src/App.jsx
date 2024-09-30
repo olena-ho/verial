@@ -12,6 +12,11 @@ import { Services } from "./pages/Services";
 import { Resources } from "./pages/Resources";
 import { AboutVerial } from "./pages/AboutVerial";
 import { Distribution } from "./pages/Distribution";
+import { BusinessMgt } from "./pages/BusinessMgt";
+import { Hospitality } from "./pages/Hospitality";
+import { BookStores } from "./pages/BookStores";
+import { Accounting } from "./pages/Accounting";
+import { Cloud } from "./pages/Cloud";
 
 export const App = () => {
   const { i18n } = useTranslation();
@@ -30,13 +35,18 @@ export const App = () => {
       <GlobalStyles />
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={<Navigate to={`/${language}`} replace />}
-        />
+        <Route path="/" element={<Navigate to={`/${language}`} replace />} />
         <Route path="/:lng" element={<Outlet />}>
           <Route index element={<Home />} />
-          <Route path="products" element={<Products />} />
+          <Route path="products" element={<Outlet />}>
+            <Route index element={<Products />} />
+            <Route path="business-mgt" element={<BusinessMgt/>} />
+            <Route path="hospitality" element={<Hospitality/>} />
+            <Route path="bookstores" element={<BookStores/>} />
+            <Route path="accounting" element={<Accounting/>} />
+            <Route path="cloud" element={<Cloud/>} />
+          </Route>
+
           <Route path="services" element={<Services />} />
           <Route path="resources" element={<Resources />} />
           <Route path="about-verial" element={<AboutVerial />} />

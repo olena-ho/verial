@@ -11,12 +11,12 @@ done:
 - global styles
 - set up react-i18next for the multilingual website
 - created pages for each of the 5 links in the nav, added them to the router
-- 
+- created structure of Products and created pages for each product, added them to the router
+
 
 plan for tomorrow:
-- read about { Link } from "react-router-dom" and if I should use Link everywhere if I use router or not
-- create structure of Products and create pages for each product, add them to the router
-- create dropdown for the Products
+- create dropdown component I will use for the Products, Services and Resourses:
+  - first a simple dropdown and then make it more complicated with hovers and right / left sides
 
 
 to do:
