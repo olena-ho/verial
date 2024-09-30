@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 
-// import { NavDropdown } from "../NavDropdown";
+import { NavDropdown } from "../NavDropdown";
 import logo from "../../assets/logo-whiteBG.png";
 import english_flag from "../../assets/flags/english-flag.png";
 import spanish_flag from "../../assets/flags/spanish-flag.png";
@@ -40,11 +40,18 @@ const Nav = styled.nav`
   align-items: center;
   gap: 2rem;
   position: relative;
+  `;
+
+const NavItem = styled.div`
+  position: relative;
+  padding: 20px 0;
+  cursor: pointer;
 `;
 
-const NavLink = styled(Link)`
+const NavLink = styled.span`
   font-size: 1rem;
   color: #333;
+  padding: 0.5rem;
 
   &:hover {
     color: #000;
@@ -71,7 +78,11 @@ const ActiveFlag = styled.img`
   vertical-align: middle;
 `;
 
-const Dropdown = styled.ul`
+const DropdownFlag = styled.ul.attrs((props) => ({
+  style: {
+    display: props.show ? "block" : "none",
+  },
+}))`
   position: absolute;
   top: 57px;
   right: -1rem;
@@ -79,7 +90,6 @@ const Dropdown = styled.ul`
   list-style: none;
   border: none;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  display: ${(props) => (props.show ? "block" : "none")};
   padding: 0;
   margin: 0;
   z-index: 200;
@@ -91,6 +101,10 @@ const DropdownItem = styled.li`
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
 const Flag = styled.img`
@@ -113,7 +127,12 @@ const DemoButton = styled.button`
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState({
+    products: false,
+    services: false,
+    resources: false,
+  });
+  const [showLngDropdown, setShowLngDropdown] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -125,18 +144,29 @@ export const Header = () => {
         ? pathname.replace(currentLng, lng)
         : `/${lng}${pathname}`;
       navigate(newPath);
-      setShowDropdown(false);
+      setShowLngDropdown(false);
     }
   };
 
   const currentLanguage = i18n.language;
 
-  const handleMouseEnter = () => {
-    setShowDropdown(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowDropdown(false);
+  const menuItems = {
+    products: [
+      { label: t("products-overview"), path: "/products" },
+      { label: t("business-mgt"), path: "/products/business-mgt" },
+      { label: t("hospitality"), path: "/products/hospitality" },
+      { label: t("bookstores"), path: "/products/bookstores" },
+      { label: t("accounting"), path: "/products/accounting" },
+      { label: t("cloud"), path: "/products/cloud" },
+    ],
+    services: [
+      { label: t("service1"), path: "/services/service1" },
+      { label: t("service2"), path: "/services/service2" },
+    ],
+    resources: [
+      { label: t("resource1"), path: "/resources/resource1" },
+      { label: t("resource2"), path: "/resources/resource2" },
+    ],
   };
 
   return (
@@ -147,26 +177,42 @@ export const Header = () => {
         </HomeLink>
       </LeftSection>
       <Nav>
-        <NavLink to={`/${currentLanguage}/products`}>{t("products")}</NavLink>
-        <NavLink to={`/${currentLanguage}/services`}>{t("services")}</NavLink>
-        <NavLink to={`/${currentLanguage}/resources`}>{t("resources")}</NavLink>
-        <NavLink to={`/${currentLanguage}/about-verial`}>
+        {["products", "services", "resources"].map((key) => (
+          <NavItem
+            key={key}
+            onMouseEnter={() =>
+              setShowDropdown((prev) => ({ ...prev, [key]: true }))
+            }
+            onMouseLeave={() =>
+              setShowDropdown((prev) => ({ ...prev, [key]: false }))
+            }
+          >
+            <NavLink>{t(key)}</NavLink>
+            <NavDropdown
+              show={showDropdown[key] ? "true" : undefined}
+              items={menuItems[key]}
+              currentLanguage={currentLanguage}
+            />
+          </NavItem>
+        ))}
+        <NavLink as={Link} to={`/${currentLanguage}/about-verial`}>
           {t("aboutVerial")}
         </NavLink>
-        <NavLink to={`/${currentLanguage}/distribution`}>
+        <NavLink as={Link} to={`/${currentLanguage}/distribution`}>
           {t("distribution")}
         </NavLink>
       </Nav>
       <RightSection>
         <LngSelection
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={() => setShowLngDropdown(true)}
+          onMouseLeave={() => setShowLngDropdown(false)}
+          onClick={() => setShowLngDropdown((prev) => !prev)} // Toggle dropdown on click
         >
           <ActiveFlag
             src={currentLanguage === "es" ? spanish_flag : english_flag}
             alt={currentLanguage === "es" ? "Spanish" : "English"}
           />
-          <Dropdown show={showDropdown ? "true" : undefined}>
+          <DropdownFlag show={showLngDropdown ? "true" : undefined}>
             {currentLanguage === "es" ? (
               <DropdownItem onClick={() => changeLanguage("en")}>
                 English
@@ -178,7 +224,7 @@ export const Header = () => {
                 <Flag src={spanish_flag} alt="Spanish" />
               </DropdownItem>
             )}
-          </Dropdown>
+          </DropdownFlag>
         </LngSelection>
         <DemoButton>{t("bookDemo")}</DemoButton>
       </RightSection>

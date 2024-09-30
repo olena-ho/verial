@@ -12,11 +12,12 @@ done:
 - set up react-i18next for the multilingual website
 - created pages for each of the 5 links in the nav, added them to the router
 - created structure of Products and created pages for each product, added them to the router
+- created simple dropdown component I use for the Products, Services and Resourses
 
 
 plan for tomorrow:
-- create dropdown component I will use for the Products, Services and Resourses:
-  - first a simple dropdown and then make it more complicated with hovers and right / left sides
+- create pages for services and resources, add them to the navigation
+- make the dropdown more complicated with right and left sides and the content change on hover
 
 
 to do:
