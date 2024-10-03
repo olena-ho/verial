@@ -7,9 +7,8 @@ import { Footer } from "./components/Footer";
 import { GlobalStyles } from "./styles/global";
 
 import { Home } from "./pages/Home";
-import { Products } from "./pages/Products";
+import { Solutions } from "./pages/Solutions";
 import { Services } from "./pages/Services";
-import { Resources } from "./pages/Resources";
 import { AboutVerial } from "./pages/AboutVerial";
 import { Distribution } from "./pages/Distribution";
 import { BusinessMgt } from "./pages/BusinessMgt";
@@ -17,6 +16,8 @@ import { Hospitality } from "./pages/Hospitality";
 import { BookStores } from "./pages/BookStores";
 import { Accounting } from "./pages/Accounting";
 import { Cloud } from "./pages/Cloud";
+import { KitDigital } from "./pages/KitDigital";
+import { FAQs } from "./pages/FAQs";
 
 export const App = () => {
   const { i18n } = useTranslation();
@@ -38,19 +39,19 @@ export const App = () => {
         <Route path="/" element={<Navigate to={`/${language}`} replace />} />
         <Route path="/:lng" element={<Outlet />}>
           <Route index element={<Home />} />
-          <Route path="products" element={<Outlet />}>
-            <Route index element={<Products />} />
-            <Route path="business-mgt" element={<BusinessMgt/>} />
-            <Route path="hospitality" element={<Hospitality/>} />
-            <Route path="bookstores" element={<BookStores/>} />
-            <Route path="accounting" element={<Accounting/>} />
-            <Route path="cloud" element={<Cloud/>} />
-          </Route>
+          <Route path="soluciones-y-productos" element={<Solutions />} />
+          <Route path="gestion-comercial" element={<BusinessMgt />} />
+          <Route path="gestion-de-hoteles" element={<Hospitality />} />
+          <Route path="gestion-de-librerias" element={<BookStores />} />
+          <Route path="programa-de-contabilidad" element={<Accounting />} />
+          <Route path="cloud" element={<Cloud />} />
 
-          <Route path="services" element={<Services />} />
-          <Route path="resources" element={<Resources />} />
-          <Route path="about-verial" element={<AboutVerial />} />
-          <Route path="distribution" element={<Distribution />} />
+          <Route path="servicios" element={<Services />} />
+          <Route path="kit-digital" element={<KitDigital />} />
+          <Route path="f-a-q" element={<FAQs />} />
+
+          <Route path="sobre-verial" element={<AboutVerial />} />
+          <Route path="distribuidor-verial" element={<Distribution />} />
         </Route>
       </Routes>
       <Footer />

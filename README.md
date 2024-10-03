@@ -12,13 +12,17 @@ done:
 - set up react-i18next for the multilingual website
 - created pages for each of the 5 links in the nav, added them to the router
 - created structure of Products and created pages for each product, added them to the router
-- created simple dropdown component I use for the Products, Services and Resourses
+- created dropdown component I use for the Products, Services and Resourses with two sides: items on the left and it's description on the right
 
 
 plan for tomorrow:
+- create carusel for the main page
 - create pages for services and resources, add them to the navigation
-- make the dropdown more complicated with right and left sides and the content change on hover
+
 
 
 to do:
+- improve the right div of the navigation dropdown: make the background color stay of the left item while we are on its corresponding right side content
+- add the links to specific subitems of the products on the right
+- add hover color change and "see more" arrow to the right side items
 - check if there are any things in the global styles that shouldn't be there and check if the individual styles repeat something from the global ones

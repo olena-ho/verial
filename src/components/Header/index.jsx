@@ -4,9 +4,9 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useState } from "react";
 
 import { NavDropdown } from "../NavDropdown";
-import logo from "../../assets/logo-whiteBG.png";
-import english_flag from "../../assets/flags/english-flag.png";
-import spanish_flag from "../../assets/flags/spanish-flag.png";
+import logo from "/assets/logo-whiteBG.png";
+import english_flag from "/assets/flags/english-flag.png";
+import spanish_flag from "/assets/flags/spanish-flag.png";
 
 const HeaderContainer = styled.header`
   position: sticky;
@@ -126,9 +126,9 @@ const DemoButton = styled.button`
 `;
 
 export const Header = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["translation", "navigation"]);
   const [showDropdown, setShowDropdown] = useState({
-    products: false,
+    solutions: false,
     services: false,
     resources: false,
   });
@@ -151,21 +151,21 @@ export const Header = () => {
   const currentLanguage = i18n.language;
 
   const menuItems = {
-    products: [
-      { label: t("products-overview"), path: "/products" },
-      { label: t("business-mgt"), path: "/products/business-mgt" },
-      { label: t("hospitality"), path: "/products/hospitality" },
-      { label: t("bookstores"), path: "/products/bookstores" },
-      { label: t("accounting"), path: "/products/accounting" },
-      { label: t("cloud"), path: "/products/cloud" },
+    solutions: [
+      { key: "solutions-overview", label: t("solutions-overview"), path: "/soluciones-y-productos" },
+      { key: "business-mgt", label: t("business-mgt"), path: "/gestion-comercial" },
+      { key: "hospitality", label: t("hospitality"), path: "/gestion-de-hoteles" },
+      { key: "bookstores", label: t("bookstores"), path: "/gestion-de-librerias" },
+      { key: "accounting", label: t("accounting"), path: "/programa-de-contabilidad" },
+      { key: "cloud", label: t("cloud"), path: "/cloud" },
     ],
     services: [
-      { label: t("service1"), path: "/services/service1" },
-      { label: t("service2"), path: "/services/service2" },
+      { key: "service1", label: t("service1"), path: "/servicios" },
+      { key: "service2", label: t("service2"), path: "/servicios/service2" },
     ],
     resources: [
-      { label: t("resource1"), path: "/resources/resource1" },
-      { label: t("resource2"), path: "/resources/resource2" },
+      { key: "kit-digital", label: t("kit-digital"), path: "/kit-digital" },
+      { key: "FAQs", label: t("FAQs"), path: "/f-a-q" },
     ],
   };
 
@@ -177,7 +177,7 @@ export const Header = () => {
         </HomeLink>
       </LeftSection>
       <Nav>
-        {["products", "services", "resources"].map((key) => (
+        {["solutions", "services", "resources"].map((key) => (
           <NavItem
             key={key}
             onMouseEnter={() =>
@@ -195,10 +195,10 @@ export const Header = () => {
             />
           </NavItem>
         ))}
-        <NavLink as={Link} to={`/${currentLanguage}/about-verial`}>
+        <NavLink as={Link} to={`/${currentLanguage}/sobre-verial`}>
           {t("aboutVerial")}
         </NavLink>
-        <NavLink as={Link} to={`/${currentLanguage}/distribution`}>
+        <NavLink as={Link} to={`/${currentLanguage}/distribuidor-verial`}>
           {t("distribution")}
         </NavLink>
       </Nav>

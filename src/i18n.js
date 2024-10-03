@@ -13,7 +13,7 @@ i18n
   .init({
     fallbackLng: "es",
     debug: true,
-    ns: ["translation"],
+    ns: ["translation", "navigation"],
     defaultNS: "translation",
     interpolation: {
       escapeValue: false,

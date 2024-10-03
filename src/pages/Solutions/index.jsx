@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
-const ResourcesContainer = styled.div`
+const SolutionsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,12 +21,12 @@ const MainTitle = styled.h1`
   }
 `;
 
-export const Resources = () => {
+export const Solutions = () => {
   const { t } = useTranslation();
 
   return (
-    <ResourcesContainer>
-      <MainTitle>{t("resources.mainTitle")}</MainTitle>
-    </ResourcesContainer>
+    <SolutionsContainer>
+      <MainTitle>{t("solutions.mainTitle")}</MainTitle>
+    </SolutionsContainer>
   );
 };

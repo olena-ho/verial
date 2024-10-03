@@ -6,9 +6,9 @@ const FooterContainer = styled.footer`
   color: white;
   padding: 2rem;
   text-align: center;
-  //make the footer stick to the bottom of the page
+  /* //make the footer stick to the bottom of the page
   position: absolute;
-  bottom: 0;
+  bottom: 0; */
   width: 100%;
 `;
 

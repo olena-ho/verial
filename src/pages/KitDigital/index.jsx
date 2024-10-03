@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
-const ProductsContainer = styled.div`
+const KitContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,12 +21,12 @@ const MainTitle = styled.h1`
   }
 `;
 
-export const Products = () => {
+export const KitDigital = () => {
   const { t } = useTranslation();
 
   return (
-    <ProductsContainer>
-      <MainTitle>{t("products.mainTitle")}</MainTitle>
-    </ProductsContainer>
+    <KitContainer>
+      <MainTitle>{t("kit-digital.mainTitle")}</MainTitle>
+    </KitContainer>
   );
 };
