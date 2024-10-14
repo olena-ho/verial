@@ -28,11 +28,21 @@ export const GlobalStyles = createGlobalStyle`
   h1 {
     font-size: 40px;
     font-weight: 600;
-    margin-bottom: 1em;
     text-align: center;
+    color: #4D4D4D;
      
     @media (max-width: 767px) {
       font-size: 30px;
+    }
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #4D4D4D;
+     
+    @media (max-width: 767px) {
+      font-size: 25px;
     }
   }
 

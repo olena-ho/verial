@@ -4,11 +4,11 @@ import { CarouselMain } from "../../components/CarouselMain";
 
 const HomeContainer = styled.div`
   display: flex;
-  margin-top: 70px;
+  margin-top: 82px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: calc(100vh - 90px);
+  gap: 4rem;
 `;
 
 const TitleSection = styled.div`
@@ -17,14 +17,12 @@ const TitleSection = styled.div`
   align-items: center;
   height: 20%;
   width: 100%;
-  margin-bottom: 2em;
 `;
 
 const MainTitle = styled.h1`
   font-size: 40px;
-  font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 1em;
+  font-weight: 300;
+  line-height: 1.25;
   text-align: center;
   max-width: 40%;
 
@@ -36,8 +34,34 @@ const MainTitle = styled.h1`
 const CarouselSection = styled.div`
   display: flex;
   justify-content: center;
-  height: 80%;
   width: 100%;
+`;
+
+const OfferSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+`;
+
+const OfferImage = styled.img`
+  width: 50%;
+  border-radius: 0 80px 0 80px;
+`;
+const OfferText = styled.div`
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+`;
+
+const OfferList = styled.ul`
+  font-size: 1.25rem;
+  list-style-type: disc;
+  padding-left: 20px;
+  line-height: 2.5;
 `;
 
 export const Home = () => {
@@ -51,6 +75,17 @@ export const Home = () => {
       <CarouselSection>
         <CarouselMain />
       </CarouselSection>
+      <OfferSection>
+        <OfferImage src="/public/assets/gestion8.jpg" alt="offer" />
+        <OfferText>
+          <h2>{t("offerTitle")}</h2>
+          <OfferList>
+            <li>{t("offer1")}</li>
+            <li>{t("offer2")}</li>
+            <li>{t("offer3")}</li>
+          </OfferList>
+        </OfferText>
+      </OfferSection>
     </HomeContainer>
   );
 };
