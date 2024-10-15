@@ -24,7 +24,7 @@ const CarouselItem = styled(Link)`
     background-image: url(${(props) => props.bgImage});
     background-size: cover;
     background-position: center;
-    opacity: ${(props) => (props.expanded ? 0.8 : 0.5)};
+    opacity: ${(props) => (props.expanded ? 1 : 0.6)};
     position: absolute;
     top: 0;
     left: 0;
@@ -35,10 +35,10 @@ const CarouselItem = styled(Link)`
   }
 
   &:hover:before {
-    opacity: 0.8;
+    opacity: 1;
   }
 
-  /* Ensure content appears above the background image */
+  /* Making sure the titles appear above the background image */
   & > * {
     position: relative;
     z-index: 2;

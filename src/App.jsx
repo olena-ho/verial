@@ -18,6 +18,7 @@ import { Accounting } from "./pages/Accounting";
 import { Cloud } from "./pages/Cloud";
 import { KitDigital } from "./pages/KitDigital";
 import { FAQs } from "./pages/FAQs";
+import { CodeOfEthics } from "./pages/CodeOfEthics";
 
 export const App = () => {
   const { i18n } = useTranslation();
@@ -49,6 +50,7 @@ export const App = () => {
           <Route path="servicios" element={<Services />} />
           <Route path="kit-digital" element={<KitDigital />} />
           <Route path="f-a-q" element={<FAQs />} />
+          <Route path="codigo_etico" element={<CodeOfEthics />} />
 
           <Route path="sobre-verial" element={<AboutVerial />} />
           <Route path="distribuidor-verial" element={<Distribution />} />

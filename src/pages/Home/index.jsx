@@ -41,8 +41,7 @@ const OfferSection = styled.div`
   display: flex;
   justify-content: space-between;
   width: 90%;
-  margin-bottom: 4rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
 `;
 
 const OfferImage = styled.img`
@@ -64,6 +63,30 @@ const OfferList = styled.ul`
   line-height: 2.5;
 `;
 
+const InvestorsSection = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+`;
+
+const InvestorsLogos = styled.div`
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+`;
+
+const LogoImage = styled.img`
+  max-width: calc(90% / 4);
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 1;
+`;
+
 export const Home = () => {
   const { t } = useTranslation();
 
@@ -83,9 +106,19 @@ export const Home = () => {
             <li>{t("offer1")}</li>
             <li>{t("offer2")}</li>
             <li>{t("offer3")}</li>
+            <li>{t("offer4")}</li>
           </OfferList>
         </OfferText>
       </OfferSection>
+      <InvestorsSection>
+        <h2>{t("investorsTitle")}</h2>
+        <InvestorsLogos>
+          <LogoImage src="/public/assets/logos/ice-logo.png" alt="competitividad empresarial" />
+          <LogoImage src="/public/assets/logos/junta-logo.png" alt="Junta de Castilla y Leon" />
+          <LogoImage src="/public/assets/logos/europa-impulsa-logo.png" alt="europa impulsa" />
+          <LogoImage src="/public/assets/logos/fondo-ue-logo.png" alt="Fondo UE" />
+        </InvestorsLogos>
+      </InvestorsSection>
     </HomeContainer>
   );
 };

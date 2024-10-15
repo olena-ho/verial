@@ -1,20 +1,155 @@
-import styled from 'styled-components';
-import { useTranslation } from 'react-i18next';
+import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const FooterContainer = styled.footer`
-  background-color: #333;
+  background-color: #0078d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   color: white;
-  padding: 2rem;
-  text-align: center;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  text-align: left;
   width: 100%;
 `;
 
+const FooterUpperPart = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 90%;
+`;
+
+const FooterItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  gap: 1rem;
+`;
+
+const CompatibleLogo = styled.img`
+  width: 150px;
+`;
+
+const MediaLogos = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const LogoImg = styled.img`
+  width: 30px;
+`;
+
+const FooterList = styled.ul`
+  line-height: 2;
+`;
+
+const FooterLink = styled(Link)`
+  color: white;
+`;
+
 export function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <FooterContainer>
-      <p>{t('footer.text')}</p>
+      <FooterUpperPart>
+        <FooterItem>
+          <CompatibleLogo src="/public/assets/logos/Logo-compatible.jpg" />
+        </FooterItem>
+        <FooterItem>
+          <h3>{t("footer.contact")}</h3>
+          <FooterList>
+            <li>{t("footer.office")}: Paseo Gran Capitán 62</li>
+            <li>tel: 923 121 363</li>
+            <li>email: comercial@verial.es</li>
+          </FooterList>
+          <MediaLogos>
+            <a
+              href="https://www.linkedin.com/company/verial-soft-s-l/"
+              target="_blank"
+            >
+              <LogoImg src="/public/assets/logos/linkedin.svg" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/verial-soft-s-l/"
+              target="_blank"
+            >
+              <LogoImg src="/public/assets/logos/facebook.svg" />
+            </a>
+          </MediaLogos>
+        </FooterItem>
+        <FooterItem>
+          <h3>{t("footer.company")}</h3>
+          <FooterList>
+            <li>
+              <FooterLink to={`/${i18n.language}/sobre-verial`}>
+                {t("aboutVerial")}
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink to={`/${i18n.language}/distribuidor-verial`}>
+                {t("footer.distributor")}
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink to={`/${i18n.language}/codigo_etico`}>
+                {t("footer.ethics")}
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/">{t("footer.funding")}</FooterLink>
+            </li>
+            <li>
+              <FooterLink to={`/${i18n.language}/f-a-q`}>
+                {t("FAQs")}
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/">
+                Actualidad Verial
+              </FooterLink>
+            </li>
+          </FooterList>
+        </FooterItem>
+        <FooterItem>
+          <h3>{t("footer.solutions")}</h3>
+          <FooterList>
+            <li>
+              <FooterLink to={`/${i18n.language}/distribuidor-verial`}>
+                {t("solutions-overview")}
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink to={`/${i18n.language}/sobre-verial`}>
+                {t("footer.training")}
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink to={`/${i18n.language}/sobre-verial`}>
+                {t("kit-digital")}
+              </FooterLink>
+            </li>
+          </FooterList>
+        </FooterItem>
+        <FooterItem>
+          <h3>{t("footer.legal")}</h3>
+          <FooterList>
+            <li>
+              <FooterLink to={`/${i18n.language}/sobre-verial`}>
+                Configuración de cookies
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink to={`/${i18n.language}/distribuidor-verial`}>
+                Aviso legal
+              </FooterLink>
+            </li>
+          </FooterList>
+        </FooterItem>
+      </FooterUpperPart>
     </FooterContainer>
   );
 }
