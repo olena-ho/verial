@@ -19,6 +19,10 @@ import { Cloud } from "./pages/Cloud";
 import { KitDigital } from "./pages/KitDigital";
 import { FAQs } from "./pages/FAQs";
 import { CodeOfEthics } from "./pages/CodeOfEthics";
+import { DocumentsToDownload } from "./pages/Documents";
+import { Restaurants } from "./pages/Restaurantes";
+import { Spa } from "./pages/Spa";
+import { Camping } from "./pages/Camping";
 
 export const App = () => {
   const { i18n } = useTranslation();
@@ -42,7 +46,12 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="soluciones-y-productos" element={<Solutions />} />
           <Route path="gestion-comercial" element={<BusinessMgt />} />
+
+
           <Route path="gestion-de-hoteles" element={<Hospitality />} />
+          <Route path="gestion-de-restaurantes-y-pubs" element={<Restaurants />} />
+          <Route path="spa-balneario" element={<Spa />} />
+          <Route path="gestion-de-camping" element={<Camping />} />
           <Route path="gestion-de-librerias" element={<BookStores />} />
           <Route path="programa-de-contabilidad" element={<Accounting />} />
           <Route path="cloud" element={<Cloud />} />
@@ -51,6 +60,7 @@ export const App = () => {
           <Route path="kit-digital" element={<KitDigital />} />
           <Route path="f-a-q" element={<FAQs />} />
           <Route path="codigo_etico" element={<CodeOfEthics />} />
+          <Route path="DOCS" element={<DocumentsToDownload />} />
 
           <Route path="sobre-verial" element={<AboutVerial />} />
           <Route path="distribuidor-verial" element={<Distribution />} />

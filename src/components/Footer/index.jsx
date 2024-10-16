@@ -48,36 +48,40 @@ const FooterList = styled.ul`
 
 const FooterLink = styled(Link)`
   color: white;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export function Footer() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["translation", "navigation"]);
 
   return (
     <FooterContainer>
       <FooterUpperPart>
         <FooterItem>
-          <CompatibleLogo src="/public/assets/logos/Logo-compatible.jpg" />
+          <CompatibleLogo src="/assets/logos/Logo-compatible.jpg" />
         </FooterItem>
         <FooterItem>
           <h3>{t("footer.contact")}</h3>
           <FooterList>
             <li>{t("footer.office")}: Paseo Gran Capitán 62</li>
-            <li>tel: 923 121 363</li>
-            <li>email: comercial@verial.es</li>
+            <li>Tel: 923 121 363</li>
+            <li>Email: comercial@verial.es</li>
           </FooterList>
           <MediaLogos>
             <a
               href="https://www.linkedin.com/company/verial-soft-s-l/"
               target="_blank"
             >
-              <LogoImg src="/public/assets/logos/linkedin.svg" />
+              <LogoImg src="/assets/logos/linkedin.svg" />
             </a>
             <a
               href="https://www.linkedin.com/company/verial-soft-s-l/"
               target="_blank"
             >
-              <LogoImg src="/public/assets/logos/facebook.svg" />
+              <LogoImg src="/assets/logos/facebook.svg" />
             </a>
           </MediaLogos>
         </FooterItem>
@@ -86,7 +90,7 @@ export function Footer() {
           <FooterList>
             <li>
               <FooterLink to={`/${i18n.language}/sobre-verial`}>
-                {t("aboutVerial")}
+                {t("navigation:aboutVerial")}
               </FooterLink>
             </li>
             <li>
@@ -104,7 +108,7 @@ export function Footer() {
             </li>
             <li>
               <FooterLink to={`/${i18n.language}/f-a-q`}>
-                {t("FAQs")}
+                {t("navigation:FAQs")}
               </FooterLink>
             </li>
             <li>
@@ -119,7 +123,7 @@ export function Footer() {
           <FooterList>
             <li>
               <FooterLink to={`/${i18n.language}/distribuidor-verial`}>
-                {t("solutions-overview")}
+                {t("navigation:solutions-overview")}
               </FooterLink>
             </li>
             <li>
@@ -129,7 +133,7 @@ export function Footer() {
             </li>
             <li>
               <FooterLink to={`/${i18n.language}/sobre-verial`}>
-                {t("kit-digital")}
+                {t("navigation:kit-digital")}
               </FooterLink>
             </li>
           </FooterList>

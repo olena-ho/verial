@@ -16,12 +16,12 @@ const CarouselItem = styled(Link)`
   display: block;
   position: relative;
   cursor: pointer;
-  transition: flex 0.5s ease-in-out;
-  
+  transition: flex 0.6s ease-in-out;
+
   &:before {
     content: "";
     border-radius: 20px;
-    background-image: url(${(props) => props.bgImage});
+    background-image: url(${(props) => props.bgimage});
     background-size: cover;
     background-position: center;
     opacity: ${(props) => (props.expanded ? 1 : 0.6)};
@@ -32,10 +32,6 @@ const CarouselItem = styled(Link)`
     bottom: 0;
     transition: opacity 0.5s ease-in-out;
     z-index: 1;
-  }
-
-  &:hover:before {
-    opacity: 1;
   }
 
   /* Making sure the titles appear above the background image */
@@ -55,41 +51,50 @@ const TextContainer = styled.div`
   left: 0;
   width: 100%;
   height: 22%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 20px 20px;
 `;
 
 const CarouselItemTitle = styled.h2`
   font-size: 1.25rem;
   padding: 0.75rem;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  img {
+    margin-left: 0.5rem;
+    width: 20px;
+  }
 `;
 
 export const CarouselMain = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["navigation"]);
   const [hoveredIndex, setHoveredIndex] = useState(2);
 
   const products = [
     {
       title: t("bookstores"),
-      bgImage: "/assets/bookstore.jpg",
+      bgimage: "/assets/bookstore.jpg",
       path: "/gestion-de-librerias",
     },
     {
       title: t("hospitality"),
-      bgImage: "/assets/hotel4.jpg",
+      bgimage: "/assets/hotel4.jpg",
       path: "/gestion-de-hoteles",
     },
     {
       title: t("business-mgt"),
-      bgImage: "/assets/gestion4.jpg",
+      bgimage: "/assets/gestion4.jpg",
       path: "/gestion-comercial",
     },
     {
       title: t("accounting"),
-      bgImage: "/assets/accounting3.jpg",
+      bgimage: "/assets/accounting3.jpg",
       path: "/programa-de-contabilidad",
     },
-    { title: t("cloud"), bgImage: "/assets/cloud41.jpg", path: "/cloud" },
+    { title: t("cloud"), bgimage: "/assets/cloud41.jpg", path: "/cloud" },
   ];
 
   return (
@@ -97,14 +102,19 @@ export const CarouselMain = () => {
       {products.map((product, index) => (
         <CarouselItem
           key={index}
-          bgImage={product.bgImage}
+          bgimage={product.bgimage}
           to={`/${i18n.language}${product.path}`}
-          expanded={hoveredIndex === index}
+          expanded={hoveredIndex === index ? "true" : undefined}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <TextContainer>
-            <CarouselItemTitle>{product.title}</CarouselItemTitle>
+            <CarouselItemTitle>
+              {product.title}
+              {hoveredIndex === index && (
+                <img src="/assets/icons/arrow.svg" alt="arrow" />
+              )}
+            </CarouselItemTitle>
           </TextContainer>
         </CarouselItem>
       ))}

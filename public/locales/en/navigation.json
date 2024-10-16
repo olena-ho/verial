@@ -1,4 +1,23 @@
 {
+  "solutions": "Solutions",
+  "services": "Services",
+  "resources": "Resources",
+  "aboutVerial": "About Verial",
+  "distribution": "Distribution",
+  "solutions-overview": "Solutions Overview",
+  "business-mgt": "Business Management",
+  "hospitality": "Hospitality Management",
+  "bookstores": "Bookstores Management",
+  "accounting": "Accounting",
+  "cloud": "Cloud",
+
+  "service-overview": "Services Overview",
+  "service-support": "Support",
+  "service-training": "Training for distributors",
+  
+  "kit-digital": "Digital Kit",
+  "FAQs": "FAQs",
+  "Documents": "Documents to download",
   "solutions-overview-brief": "Verial products are professional programs for accounting and business management of various types of business, including but not limited to hotels, bookstores, restaurants and pubs.",
   "business-mgt-brief": "Verial Management adapts its solutions to the specific needs of your company, offering specialized management without unnecessary elements.",
   "hospitality-brief": "Verial Hotel / Restaurant is an ERP and PMS that allows you to manage all areas of your business. It is a modular solution that, by investing just the right amount, can meet your demand, whether you are a vacation hotel, a hotel for conference and event, a spa or a restaurant; the specialization of each module will give you total control over each area of work. For individual hotels, hotel groups or chains.",

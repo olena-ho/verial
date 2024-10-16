@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -11,8 +11,8 @@ const DropdownContainer = styled.div.attrs((props) => ({
 }))`
   position: absolute;
   top: 57px;
-  left: -1rem;
-  width: 600px;
+  left: -100%;
+  width: 50vw;
   background-color: white;
   border: none;
   padding-top: 0.5rem;
@@ -61,12 +61,6 @@ export const NavDropdown = ({ show, items, currentLanguage }) => {
 
   const { t } = useTranslation("navigation");
 
-  useEffect(() => {
-    if (show) {
-      setSelectedItemIndex(0);
-    }
-  }, [show]);
-
   const getRightContent = (key) => {
     return t(`${key}-brief`);
   };
@@ -77,7 +71,7 @@ export const NavDropdown = ({ show, items, currentLanguage }) => {
         {items.map(({ key, label, path }, index) => (
           <DropdownItem
             key={key}
-            active={index === selectedItemIndex}
+            // active={index === selectedItemIndex ? "true" : undefined}
             onMouseEnter={() => setSelectedItemIndex(index)}
           >
             <DropdownLink to={`/${currentLanguage}${path}`}>

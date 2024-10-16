@@ -46,6 +46,7 @@ const OfferSection = styled.div`
 
 const OfferImage = styled.img`
   width: 50%;
+  height: fit-content;
   border-radius: 0 80px 0 80px;
 `;
 const OfferText = styled.div`
@@ -99,7 +100,7 @@ export const Home = () => {
         <CarouselMain />
       </CarouselSection>
       <OfferSection>
-        <OfferImage src="/public/assets/gestion8.jpg" alt="offer" />
+        <OfferImage src="/assets/gestion8.jpg" alt="offer" />
         <OfferText>
           <h2>{t("offerTitle")}</h2>
           <OfferList>
@@ -113,10 +114,10 @@ export const Home = () => {
       <InvestorsSection>
         <h2>{t("investorsTitle")}</h2>
         <InvestorsLogos>
-          <LogoImage src="/public/assets/logos/ice-logo.png" alt="competitividad empresarial" />
-          <LogoImage src="/public/assets/logos/junta-logo.png" alt="Junta de Castilla y Leon" />
-          <LogoImage src="/public/assets/logos/europa-impulsa-logo.png" alt="europa impulsa" />
-          <LogoImage src="/public/assets/logos/fondo-ue-logo.png" alt="Fondo UE" />
+          <LogoImage src="/assets/logos/ice-logo.png" alt="competitividad empresarial" />
+          <LogoImage src="/assets/logos/junta-logo.png" alt="Junta de Castilla y Leon" />
+          <LogoImage src="/assets/logos/europa-impulsa-logo.png" alt="europa impulsa" />
+          <LogoImage src="/assets/logos/fondo-ue-logo.png" alt="Fondo UE" />
         </InvestorsLogos>
       </InvestorsSection>
     </HomeContainer>

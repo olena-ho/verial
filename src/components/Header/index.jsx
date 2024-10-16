@@ -40,7 +40,7 @@ const Nav = styled.nav`
   align-items: center;
   gap: 2rem;
   position: relative;
-  `;
+`;
 
 const NavItem = styled.div`
   position: relative;
@@ -152,20 +152,58 @@ export const Header = () => {
 
   const menuItems = {
     solutions: [
-      { key: "solutions-overview", label: t("solutions-overview"), path: "/soluciones-y-productos" },
-      { key: "business-mgt", label: t("business-mgt"), path: "/gestion-comercial" },
-      { key: "hospitality", label: t("hospitality"), path: "/gestion-de-hoteles" },
-      { key: "bookstores", label: t("bookstores"), path: "/gestion-de-librerias" },
-      { key: "accounting", label: t("accounting"), path: "/programa-de-contabilidad" },
-      { key: "cloud", label: t("cloud"), path: "/cloud" },
+      {
+        key: "solutions-overview",
+        label: t("navigation:solutions-overview"),
+        path: "/soluciones-y-productos",
+      },
+      {
+        key: "business-mgt",
+        label: t("navigation:business-mgt"),
+        path: "/gestion-comercial",
+      },
+      {
+        key: "hospitality",
+        label: t("navigation:hospitality"),
+        path: "/gestion-de-hoteles",
+      },
+      {
+        key: "bookstores",
+        label: t("navigation:bookstores"),
+        path: "/gestion-de-librerias",
+      },
+      {
+        key: "accounting",
+        label: t("navigation:accounting"),
+        path: "/programa-de-contabilidad",
+      },
+      { key: "cloud", label: t("navigation:cloud"), path: "/cloud" },
     ],
     services: [
-      { key: "service1", label: t("service1"), path: "/servicios" },
-      { key: "service2", label: t("service2"), path: "/servicios/service2" },
+      {
+        key: "service1",
+        label: t("navigation:service-overview"),
+        path: "/servicios",
+      },
+      {
+        key: "service2",
+        label: t("navigation:service-support"),
+        path: "/servicios/service2",
+      },
+      {
+        key: "service3",
+        label: t("navigation:service-training"),
+        path: "/servicios/service2",
+      },
     ],
     resources: [
-      { key: "kit-digital", label: t("kit-digital"), path: "/kit-digital" },
-      { key: "FAQs", label: t("FAQs"), path: "/f-a-q" },
+      {
+        key: "kit-digital",
+        label: t("navigation:kit-digital"),
+        path: "/kit-digital",
+      },
+      { key: "FAQs", label: t("navigation:FAQs"), path: "/f-a-q" },
+      { key: "Documents", label: t("navigation:Documents"), path: "/DOCS" },
     ],
   };
 
@@ -187,7 +225,7 @@ export const Header = () => {
               setShowDropdown((prev) => ({ ...prev, [key]: false }))
             }
           >
-            <NavLink>{t(key)}</NavLink>
+            <NavLink>{t(`navigation:${key}`)}</NavLink>
             <NavDropdown
               show={showDropdown[key] ? "true" : undefined}
               items={menuItems[key]}
@@ -196,10 +234,10 @@ export const Header = () => {
           </NavItem>
         ))}
         <NavLink as={Link} to={`/${currentLanguage}/sobre-verial`}>
-          {t("aboutVerial")}
+          {t("navigation:aboutVerial")}
         </NavLink>
         <NavLink as={Link} to={`/${currentLanguage}/distribuidor-verial`}>
-          {t("distribution")}
+          {t("navigation:distribution")}
         </NavLink>
       </Nav>
       <RightSection>
