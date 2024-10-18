@@ -161,11 +161,40 @@ export const Header = () => {
         key: "business-mgt",
         label: t("navigation:business-mgt"),
         path: "/gestion-comercial",
+        types: [
+          {
+            key: "bebidas y alimentacion",
+            label: t("navigation:bebidas"),
+            path: "/",
+          },
+          { key: "mayorista", label: t("navigation:mayorista"), path: "/" },
+          {
+            key: "supermercados",
+            label: t("navigation:supermercados"),
+            path: "/",
+          },
+          { key: "ferreterias", label: t("navigation:ferreterias"), path: "/" },
+          { key: "veterinaria", label: t("navigation:veterinaria"), path: "/" },
+          { key: "carnicas", label: t("navigation:carnicas"), path: "/" },
+        ],
       },
       {
         key: "hospitality",
         label: t("navigation:hospitality"),
         path: "/gestion-de-hoteles",
+        types: [
+          { key: "spa", label: t("navigation:spa"), path: "/spa-balneario" },
+          {
+            key: "camping",
+            label: t("navigation:camping"),
+            path: "/gestion-de-camping",
+          },
+          {
+            key: "restaurantes",
+            label: t("navigation:restaurantes"),
+            path: "/gestion-de-restaurantes-y-pubs",
+          },
+        ],
       },
       {
         key: "bookstores",

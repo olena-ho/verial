@@ -15,7 +15,7 @@ const DropdownContainer = styled.div.attrs((props) => ({
   width: 50vw;
   background-color: white;
   border: none;
-  padding-top: 0.5rem;
+  padding: 1rem;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   margin: 0;
@@ -31,12 +31,9 @@ const LeftContainer = styled.ul`
 
 const DropdownItem = styled.li`
   cursor: pointer;
+  border-radius: 10px;
   &:hover {
-    background-color: #f0f0f0;
-  }
-
-  &:last-child:hover {
-    border-radius: 0 0 0 10px;
+    background-color: #EDF5FC;
   }
 `;
 
@@ -44,16 +41,21 @@ const DropdownLink = styled(Link)`
   text-decoration: none;
   color: #333;
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
 `;
 
 const RightContainer = styled.div`
   width: 70%;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   padding: 0.5rem 1rem;
   line-height: 1.5;
+  gap: 1rem;
+`;
+
+const NavSubTitle = styled.h4`
+  color: #333;
 `;
 
 export const NavDropdown = ({ show, items, currentLanguage }) => {
@@ -65,13 +67,14 @@ export const NavDropdown = ({ show, items, currentLanguage }) => {
     return t(`${key}-brief`);
   };
 
+  const selectedItem = items[selectedItemIndex];
+
   return (
     <DropdownContainer show={show}>
       <LeftContainer>
         {items.map(({ key, label, path }, index) => (
           <DropdownItem
             key={key}
-            // active={index === selectedItemIndex ? "true" : undefined}
             onMouseEnter={() => setSelectedItemIndex(index)}
           >
             <DropdownLink to={`/${currentLanguage}${path}`}>
@@ -81,7 +84,24 @@ export const NavDropdown = ({ show, items, currentLanguage }) => {
         ))}
       </LeftContainer>
       <RightContainer>
+        <NavSubTitle>{t("overview-title")}</NavSubTitle>
         {getRightContent(items[selectedItemIndex].key)}
+
+        {selectedItem.types && (
+          <>
+            <NavSubTitle>{t("business-type-title")}</NavSubTitle>
+            <ul>
+            {selectedItem.types.map(({ key, label, path }) => (
+              <DropdownItem key={key}>
+              <DropdownLink to={`/${currentLanguage}${path}`}>
+                {label}
+                </DropdownLink>
+              </DropdownItem>
+            ))}
+            </ul>
+          </>
+        
+        )}
       </RightContainer>
     </DropdownContainer>
   );

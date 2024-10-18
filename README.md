@@ -21,12 +21,13 @@ done:
 plan for tomorrow:
 
 - create pages for all the solutions, add them to the navigation
-- add the subcategory solutions to the right part of the dropdown
+- add the "Overview" and "Your type of business" titles and subcategory items to the right part of the dropdown
+- add hover and arrow to the selected item on the right, make the corresponding item on the left stay hovered 
 
 
 to do:
 
-- add hover color change and "see more" arrow to the right side items
+- make the NavDropdown close on click
 - find a way for the Links to show the top of the new page opened (not the current scroll posotion)
 - improve the right div of the navigation dropdown: make the background color stay of the left item while we are on its corresponding right side content
 - add the links to specific subitems of the products on the right
