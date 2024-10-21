@@ -12,8 +12,7 @@
   "cloud": "Cloud",
 
   "service-overview": "Services Overview",
-  "service-support": "Support",
-  "service-training": "Training for distributors",
+  "support-training": "Support and Training",
   
   "kit-digital": "Digital Kit",
   "FAQs": "FAQs",
@@ -23,10 +22,20 @@
   "spa": "Spa / Health Resort",
   "camping": "Camping",
   "restaurantes": "Restaurant / pub",
+  "bebidas": "Food and beverages",
+  "mayorista": "Wholesale distribution",
+  "supermercados": "Supermarkets",
+  "ferreterias": "Hardware stores",
+  "veterinaria": "Veterinary clinics",
+  "carnicas": "Butcher shops",
   "solutions-overview-brief": "Verial products are professional programs for accounting and business management of various types of business, including but not limited to hotels, bookstores, restaurants and pubs.",
   "business-mgt-brief": "Verial Management adapts its solutions to the specific needs of your company, offering specialized management without unnecessary elements.",
   "hospitality-brief": "Verial Hotel / Restaurant is an ERP and PMS that allows you to manage all areas of your business. It is a modular solution that, by investing just the right amount, can meet your demand. Perfect for individual hotels, hotel groups or chains.",
   "bookstores-brief": "Verial Books, with a history of almost 3 decades, is the program that allows you to manage all aspects of the sector, with specific developments for each of them: Bookstores and stationery stores, Publishers and distributors. Complemented with integrations such as SINLI, CEGALRED, GLOBALBOOK...",
   "accounting-brief": "Verial Accounting, independent or integrated with any of the Verial solutions, manages all the accounting needs of the company. It provides control tools, automatic processes, models for the Tax Agency, etc.",
-  "cloud-brief": "Verial Cloud offers three products according to your needs: Shop (for e-commerce), CRM (to manage customer relationships) and CMS (to manage web content)."
+  "cloud-brief": "Verial Cloud offers three products according to your needs: Shop (for e-commerce), CRM (to manage customer relationships) and CMS (to manage web content).",
+  "services-overview-brief": "Verial Soft offers a wide range of services, from restricted distributor access and file downloads to technical support and sales training, all designed to optimize your business management.",
+  "support-training-brief": "Verial Soft provides comprehensive support and training, including online and on-site training on product usage, technical configuration and sales strategies, as well as remote assistance for troubleshooting or improving effectiveness.",
+  "FAQs-brief": "Frequently Asked Questions about Verial products and services. Find answers to common questions about installation, configuration, usage, and more.",
+  "Documents-brief": "Downloadable documents related to Verial products and services. Find user manuals, installation guides, and other resources to help you get the most out of our solutions."
 }

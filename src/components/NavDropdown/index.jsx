@@ -40,6 +40,7 @@ const DropdownItem = styled.li`
 const DropdownLink = styled(Link)`
   text-decoration: none;
   color: #333;
+  font-weight: 500;
   display: block;
   padding: 0.75rem 1rem;
 `;
@@ -55,7 +56,7 @@ const RightContainer = styled.div`
 `;
 
 const NavSubTitle = styled.h4`
-  color: #333;
+  color: #6e6e6e;
 `;
 
 export const NavDropdown = ({ show, items, currentLanguage }) => {

@@ -165,17 +165,33 @@ export const Header = () => {
           {
             key: "bebidas y alimentacion",
             label: t("navigation:bebidas"),
-            path: "/",
+            path: "/bebidas-y-alimentacion",
           },
-          { key: "mayorista", label: t("navigation:mayorista"), path: "/" },
+          {
+            key: "mayorista",
+            label: t("navigation:mayorista"),
+            path: "/distribucion-mayorista",
+          },
           {
             key: "supermercados",
             label: t("navigation:supermercados"),
-            path: "/",
+            path: "/gestion-de-supermercados",
           },
-          { key: "ferreterias", label: t("navigation:ferreterias"), path: "/" },
-          { key: "veterinaria", label: t("navigation:veterinaria"), path: "/" },
-          { key: "carnicas", label: t("navigation:carnicas"), path: "/" },
+          {
+            key: "ferreterias",
+            label: t("navigation:ferreterias"),
+            path: "/gestion-de-ferreterias",
+          },
+          {
+            key: "veterinaria",
+            label: t("navigation:veterinaria"),
+            path: "/veterinaria",
+          },
+          {
+            key: "carnicas",
+            label: t("navigation:carnicas"),
+            path: "/carnicas",
+          },
         ],
       },
       {
@@ -210,27 +226,17 @@ export const Header = () => {
     ],
     services: [
       {
-        key: "service1",
+        key: "services-overview",
         label: t("navigation:service-overview"),
         path: "/servicios",
       },
       {
-        key: "service2",
-        label: t("navigation:service-support"),
-        path: "/servicios/service2",
-      },
-      {
-        key: "service3",
-        label: t("navigation:service-training"),
-        path: "/servicios/service2",
+        key: "support-training",
+        label: t("navigation:support-training"),
+        path: "/formacion",
       },
     ],
     resources: [
-      {
-        key: "kit-digital",
-        label: t("navigation:kit-digital"),
-        path: "/kit-digital",
-      },
       { key: "FAQs", label: t("navigation:FAQs"), path: "/f-a-q" },
       { key: "Documents", label: t("navigation:Documents"), path: "/DOCS" },
     ],
@@ -268,6 +274,9 @@ export const Header = () => {
         <NavLink as={Link} to={`/${currentLanguage}/distribuidor-verial`}>
           {t("navigation:distribution")}
         </NavLink>
+        <NavLink as={Link} to={`/${currentLanguage}/kit-digital`}>
+          {t("navigation:kit-digital")}
+        </NavLink>
       </Nav>
       <RightSection>
         <LngSelection
@@ -293,7 +302,9 @@ export const Header = () => {
             )}
           </DropdownFlag>
         </LngSelection>
-        <DemoButton>{t("bookDemo")}</DemoButton>
+        <Link to={`/${currentLanguage}/solicitar-demo`}>
+          <DemoButton>{t("bookDemo")}</DemoButton>
+        </Link>
       </RightSection>
     </HeaderContainer>
   );

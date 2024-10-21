@@ -17,19 +17,19 @@ done:
 - created carusel for the main page
 - created the footer
 - added arrows to the carousel on hover
+- added the "Overview" and "Your type of business" titles and subcategory items to the right part of the dropdown
+- created pages for all the solutions, added them to the navigation
 
 plan for tomorrow:
 
-- create pages for all the solutions, add them to the navigation
-- add the "Overview" and "Your type of business" titles and subcategory items to the right part of the dropdown
 - add hover and arrow to the selected item on the right, make the corresponding item on the left stay hovered 
+- make the NavDropdown close on click
 
 
 to do:
 
-- make the NavDropdown close on click
 - find a way for the Links to show the top of the new page opened (not the current scroll posotion)
-- improve the right div of the navigation dropdown: make the background color stay of the left item while we are on its corresponding right side content
-- add the links to specific subitems of the products on the right
+- make the cursor go back to normal when it's over Overview in the RightContainer in Navigation dropdown
+
 - check if there are any things in the global styles that shouldn't be there and check if the individual styles repeat something from the global ones
 - ask Juan about zip code of the office

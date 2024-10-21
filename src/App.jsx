@@ -23,6 +23,13 @@ import { DocumentsToDownload } from "./pages/Documents";
 import { Restaurants } from "./pages/Restaurantes";
 import { Spa } from "./pages/Spa";
 import { Camping } from "./pages/Camping";
+import { DemoRequest } from "./pages/DemoRequest";
+import { Butchers } from "./pages/Butchers";
+import { FoodDrinks } from "./pages/FoodDrinks";
+import { Mayorista } from "./pages/Mayorista";
+import { Supermarkets } from "./pages/Supermarkets";
+import { Ferreterias } from "./pages/Ferreterias";
+import { Vets } from "./pages/Vets";
 
 export const App = () => {
   const { i18n } = useTranslation();
@@ -46,6 +53,12 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="soluciones-y-productos" element={<Solutions />} />
           <Route path="gestion-comercial" element={<BusinessMgt />} />
+          <Route path="bebidas-y-alimentacion" element={<FoodDrinks />} />
+          <Route path="distribucion-mayorista" element={<Mayorista />} />
+          <Route path="gestion-de-supermercados" element={<Supermarkets />} />
+          <Route path="gestion-de-ferreterias" element={<Ferreterias />} />
+          <Route path="veterinaria" element={<Vets />} />
+          <Route path="carnicas" element={<Butchers />} />
 
 
           <Route path="gestion-de-hoteles" element={<Hospitality />} />
@@ -64,6 +77,7 @@ export const App = () => {
 
           <Route path="sobre-verial" element={<AboutVerial />} />
           <Route path="distribuidor-verial" element={<Distribution />} />
+          <Route path="solicitar-demo" element={<DemoRequest />} />
         </Route>
       </Routes>
       <Footer />
