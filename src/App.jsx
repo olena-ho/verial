@@ -30,6 +30,7 @@ import { Mayorista } from "./pages/Mayorista";
 import { Supermarkets } from "./pages/Supermarkets";
 import { Ferreterias } from "./pages/Ferreterias";
 import { Vets } from "./pages/Vets";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 export const App = () => {
   const { i18n } = useTranslation();
@@ -47,6 +48,7 @@ export const App = () => {
     <>
       <GlobalStyles />
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to={`/${language}`} replace />} />
         <Route path="/:lng" element={<Outlet />}>
