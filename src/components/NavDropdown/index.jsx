@@ -12,7 +12,7 @@ const DropdownContainer = styled.div.attrs((props) => ({
   position: absolute;
   top: 57px;
   left: -100%;
-  width: 50vw;
+  width: 45vw;
   background-color: white;
   border: none;
   padding: 1rem;
@@ -31,10 +31,13 @@ const LeftContainer = styled.ul`
 
 const DropdownItem = styled.li`
   cursor: pointer;
+  display: flex;
+  align-items: center;
   border-radius: 10px;
-  &:hover {
-    background-color: #EDF5FC;
-  }
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+  background-color: ${({ isHovered, isSelected }) =>
+  isHovered ? (isSelected ? "#edf5fc" : "#dcdcdc") : "transparent"};
 `;
 
 const DropdownLink = styled(Link)`
@@ -42,7 +45,12 @@ const DropdownLink = styled(Link)`
   color: #333;
   font-weight: 500;
   display: block;
-  padding: 0.75rem 1rem;
+  width: 100%;
+`;
+
+const TypeLinkImg = styled.img`
+  width: 35px;
+  object-fit: contain;
 `;
 
 const RightContainer = styled.div`
@@ -59,8 +67,15 @@ const NavSubTitle = styled.h4`
   color: #6e6e6e;
 `;
 
-export const NavDropdown = ({ show, items, currentLanguage }) => {
+export const NavDropdown = ({
+  show,
+  items,
+  currentLanguage,
+  setShowDropdown,
+}) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
+  const [hoveredParentIndex, setHoveredParentIndex] = useState(null);
+  const [hoveredChildIndex, setHoveredChildIndex] = useState(null);
 
   const { t } = useTranslation("navigation");
 
@@ -76,10 +91,19 @@ export const NavDropdown = ({ show, items, currentLanguage }) => {
         {items.map(({ key, label, path }, index) => (
           <DropdownItem
             key={key}
-            onMouseEnter={() => setSelectedItemIndex(index)}
+            onMouseEnter={() => {
+              setSelectedItemIndex(index);
+              setHoveredParentIndex(index);
+              setHoveredChildIndex(null);
+            }}
+            isHovered={hoveredParentIndex === index}
+            isSelected={hoveredChildIndex === null}
           >
-            <DropdownLink to={`/${currentLanguage}${path}`}>
-              {label}
+            <DropdownLink
+              to={`/${currentLanguage}${path}`}
+              onClick={() => setShowDropdown(false)}
+            >
+            {label}
             </DropdownLink>
           </DropdownItem>
         ))}
@@ -92,16 +116,26 @@ export const NavDropdown = ({ show, items, currentLanguage }) => {
           <>
             <NavSubTitle>{t("business-type-title")}</NavSubTitle>
             <ul>
-            {selectedItem.types.map(({ key, label, path }) => (
-              <DropdownItem key={key}>
-              <DropdownLink to={`/${currentLanguage}${path}`}>
-                {label}
-                </DropdownLink>
-              </DropdownItem>
-            ))}
+              {selectedItem.types.map(({ key, label, path, img }, index) => (
+                <DropdownItem
+                  key={key}
+                  onMouseEnter={() => setHoveredChildIndex(index)}
+                  onMouseLeave={() => setHoveredChildIndex(null)}
+                  isHovered={hoveredChildIndex === index}
+                  isSelected={hoveredParentIndex === selectedItemIndex}
+                >
+                  <TypeLinkImg src={img} />
+                  <DropdownLink
+                    to={`/${currentLanguage}${path}`}
+                    onClick={() => setShowDropdown(false)}
+                  >
+                    {label}
+                  </DropdownLink>
+
+                </DropdownItem>
+              ))}
             </ul>
           </>
-        
         )}
       </RightContainer>
     </DropdownContainer>

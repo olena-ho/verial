@@ -19,16 +19,15 @@ done:
 - added arrows to the carousel on hover
 - added the "Overview" and "Your type of business" titles and subcategory items to the right part of the dropdown
 - created pages for all the solutions, added them to the navigation
+- implemented ScrollToTop component to show the top of the new page opened instead of the current scroll position
+- added hover to the selected item on the right, make the corresponding item on the left stay hovered 
+- added icons to the Links in the Right NavDropdown
 
 plan for tomorrow:
-
-- add hover and arrow to the selected item on the right, make the corresponding item on the left stay hovered 
-- make the NavDropdown close on click
+- 
 
 
 to do:
-
-- find a way for the Links to show the top of the new page opened (not the current scroll posotion)
 - make the cursor go back to normal when it's over Overview in the RightContainer in Navigation dropdown
 
 - check if there are any things in the global styles that shouldn't be there and check if the individual styles repeat something from the global ones

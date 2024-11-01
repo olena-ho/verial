@@ -166,31 +166,37 @@ export const Header = () => {
             key: "bebidas y alimentacion",
             label: t("navigation:bebidas"),
             path: "/bebidas-y-alimentacion",
+            img: "/assets/icons/wine.png",
           },
           {
             key: "mayorista",
             label: t("navigation:mayorista"),
             path: "/distribucion-mayorista",
+            img: "/assets/icons/wholesaler.png",
           },
           {
             key: "supermercados",
             label: t("navigation:supermercados"),
             path: "/gestion-de-supermercados",
+            img: "/assets/icons/trolley.png",
           },
           {
             key: "ferreterias",
             label: t("navigation:ferreterias"),
             path: "/gestion-de-ferreterias",
+            img: "/assets/icons/maintenance.png",
           },
           {
             key: "veterinaria",
             label: t("navigation:veterinaria"),
             path: "/veterinaria",
+            img: "/assets/icons/dog.png",
           },
           {
             key: "carnicas",
             label: t("navigation:carnicas"),
             path: "/carnicas",
+            img: "/assets/icons/ham-leg.png",
           },
         ],
       },
@@ -199,16 +205,29 @@ export const Header = () => {
         label: t("navigation:hospitality"),
         path: "/gestion-de-hoteles",
         types: [
-          { key: "spa", label: t("navigation:spa"), path: "/spa-balneario" },
+          {
+            key: "spa",
+            label: t("navigation:spa"),
+            path: "/spa-balneario",
+            img: "/assets/icons/relax.png",
+          },
           {
             key: "camping",
             label: t("navigation:camping"),
             path: "/gestion-de-camping",
+            img: "/assets/icons/camping.png",
           },
           {
             key: "restaurantes",
             label: t("navigation:restaurantes"),
             path: "/gestion-de-restaurantes-y-pubs",
+            img: "/assets/icons/serving-dish.png",
+          },
+          {
+            key: "hotel",
+            label: t("navigation:hotel"),
+            path: "/gestion-de-hoteles",
+            img: "/assets/icons/hotel.png",
           },
         ],
       },
@@ -263,6 +282,9 @@ export const Header = () => {
             <NavLink>{t(`navigation:${key}`)}</NavLink>
             <NavDropdown
               show={showDropdown[key] ? "true" : undefined}
+              setShowDropdown={(value) =>
+                setShowDropdown((prev) => ({ ...prev, [key]: value }))
+              }
               items={menuItems[key]}
               currentLanguage={currentLanguage}
             />
