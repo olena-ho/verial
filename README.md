@@ -22,12 +22,17 @@ done:
 - implemented ScrollToTop component to show the top of the new page opened instead of the current scroll position
 - added hover to the selected item on the right, make the corresponding item on the left stay hovered 
 - added icons to the Links in the Right NavDropdown
+- moved Investors section to the footer component
 
 plan for tomorrow:
-- 
+- design about verial, training, services, downloadables
+- do these 4 pages
+
+
 
 
 to do:
+- create UX design for individual solutions 
 - make the cursor go back to normal when it's over Overview in the RightContainer in Navigation dropdown
 
 - check if there are any things in the global styles that shouldn't be there and check if the individual styles repeat something from the global ones

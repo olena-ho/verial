@@ -4,7 +4,7 @@ import { CarouselMain } from "../../components/CarouselMain";
 
 const HomeContainer = styled.div`
   display: flex;
-  margin-top: 82px;
+  margin: 82px 0;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -64,30 +64,6 @@ const OfferList = styled.ul`
   line-height: 2.5;
 `;
 
-const InvestorsSection = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-`;
-
-const InvestorsLogos = styled.div`
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-`;
-
-const LogoImage = styled.img`
-  max-width: calc(90% / 4);
-  height: 100px;
-  object-fit: contain;
-  flex-shrink: 1;
-`;
-
 export const Home = () => {
   const { t } = useTranslation();
 
@@ -111,15 +87,6 @@ export const Home = () => {
           </OfferList>
         </OfferText>
       </OfferSection>
-      <InvestorsSection>
-        <h2>{t("investorsTitle")}</h2>
-        <InvestorsLogos>
-          <LogoImage src="/assets/logos/ice-logo.png" alt="competitividad empresarial" />
-          <LogoImage src="/assets/logos/junta-logo.png" alt="Junta de Castilla y Leon" />
-          <LogoImage src="/assets/logos/europa-impulsa-logo.png" alt="europa impulsa" />
-          <LogoImage src="/assets/logos/fondo-ue-logo.png" alt="Fondo UE" />
-        </InvestorsLogos>
-      </InvestorsSection>
     </HomeContainer>
   );
 };

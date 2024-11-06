@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
@@ -27,11 +28,11 @@ export const GlobalStyles = createGlobalStyle`
    
   h1 {
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     color: #4D4D4D;
      
-    @media (max-width: 767px) {
+    @media (max-width: 430px) {
       font-size: 30px;
     }
   }
@@ -49,5 +50,19 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
     color: #333;
+  }
+`;
+
+export const Container = styled.div` 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  margin: 80px auto;
+  gap: 4rem;
+
+  @media (max-width: 430px) {
+    width: 90vw;
   }
 `;
